@@ -42,11 +42,11 @@
             </div>
         </fieldset>	
 
-	<footer>
-		<hr>
-		&copy; 2024 Copyright Reserved - Apartment INC <br>
-		<small>email@shieldplus.com</small>
-	</footer>
+        <footer>
+            <hr>
+            &copy; 2024 Copyright Reserved<br>
+            <small>email@ApartmentINC.com</small>
+        </footer>
     </div>
 	</div>
 

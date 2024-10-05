@@ -93,7 +93,11 @@
 
     </div>
 
-    
+    <footer>
+            <hr>
+            &copy; 2024 Copyright Reserved<br>
+            <small>email@ApartmentINC.com</small>
+        </footer>
 	
 
 

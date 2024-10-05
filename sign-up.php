@@ -113,7 +113,11 @@
 
         </div>
 
-        <?php require_once('inc/footer.php') ?>
+        <footer>
+            <hr>
+            &copy; 2024 Copyright Reserved<br>
+            <small>email@ApartmentINC.com</small>
+        </footer>
 	</div>
 
 </body>

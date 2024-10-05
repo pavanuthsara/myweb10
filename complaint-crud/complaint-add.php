@@ -78,10 +78,10 @@ $connection->close();
                 </form>
 
             </div>
-        <footer>
+            <footer>
             <hr>
-            &copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
-            <small>email@shieldplus.com</small>
+            &copy; 2024 Copyright Reserved<br>
+            <small>email@ApartmentINC.com</small>
         </footer>
 	</div>
 
