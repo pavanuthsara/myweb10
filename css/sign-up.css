@@ -1,0 +1,24 @@
+h3{
+	text-align: center;
+}
+
+.form-container{
+	background-image: url('../img/family.webp');
+	background-repeat: no-repeat;
+	background-size: cover; 
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	min-height: 100vh;
+	margin-bottom: 60px;
+	padding: 50px;
+}
+
+#form{
+	background-color: #EEEEEE;
+	border-radius: 10px;
+}
+
+p#message{
+	background-color: red;
+}
