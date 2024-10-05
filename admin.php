@@ -64,9 +64,8 @@
 			<hr>
             <div class="employee-buttons">
 			<a href="plan/add-plan.php" class="button-one">Add new user</a>
-            <a href="plan/read-plan.php" class="button-one">Read plan details</a>
-            <a href="plan/update-plan.php" class="button-one">Update plan detail</a>
-            <a href="plan/delete-plan.php" class="button-one">Delete plan</a>
+            <a href="plan/read-plan.php" class="button-one">Read & Update user details</a>
+            <a href="plan/delete-plan.php" class="button-one">Delete user</a>
             </div>
 		</div>	
 
