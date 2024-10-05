@@ -26,7 +26,7 @@ session_start();
             <div><b>Currently working employees</b></div> <br>
                 <?php 
                 require_once '../inc/connection.php';
-                $sql = "SELECT * FROM employee ORDER BY employeeId ASC";
+                $sql = "SELECT * FROM staff";
                 $result = $connection->query($sql);
                 
                 if(!$result){
@@ -61,14 +61,13 @@ session_start();
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
-                    echo "<tr><td>Employee Id</td> <td>Name</td> <td>Date Of Birth</td> <td>Contact</td> <td>Job Title</td></tr>";
+                    echo "<tr><td>Staff Id</td> <td>Username</td> <td>Name</td> <td>Position</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
-                        echo "<td>".$row['employeeId']."</td>";
-                        echo "<td>".$row['employeeName']."</td>";
-                        echo "<td>".$row['dob']."</td>";
-                        echo "<td>".$row['contact']."</td>";
-                        echo "<td>".$row['jobTitle']."</td>";
+                        echo "<td>".$row['sid']."</td>";
+                        echo "<td>".$row['staffUserName']."</td>";
+                        echo "<td>".$row['name']."</td>";
+                        echo "<td>".$row['position']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 

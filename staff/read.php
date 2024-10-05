@@ -1,13 +1,12 @@
 <?php 
 session_start(); 
-$username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>User - Apartment booking details</title>
+	<title>Admin</title>
 	<link rel="stylesheet" type="text/css" href="style-claim.css">
 </head>
 
@@ -20,16 +19,15 @@ $username = $_SESSION['username'];
         </div>
 
         <ul class="nav1">
-            <li class="nav1"><a href="../user.php">User dashboard</a></li>
+            <li class="nav1"><a href="../user.php">Admin dashboard</a></li>
             <li class="nav2"><a href="../logout.php">Log Out</a></li>
         </ul>
 
         <div class="view-employee"> 
-            <div><b>Your Apartment booking details</b></div> <br>
+            <div><b>Staff details</b></div> <br>
                 <?php 
                 require_once '../inc/connection.php';
-                $userid = $_SESSION['userid'];
-                $sql = "SELECT * FROM booking WHERE userId = '$userid'";
+                $sql = "SELECT * FROM staff";
                 $result = $connection->query($sql);
                 
                 if(!$result){
@@ -71,12 +69,13 @@ $username = $_SESSION['username'];
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
-                    echo "<tr><td>Booking Id</td> <td>User Id</td> <td>Apartment Id</td></tr>";
+                    echo "<tr><td>Staff Id</td> <td>Username</td> <td>Name</td> <td>Position</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
-                        echo "<td>".$row['bookingId']."</td>";
-                        echo "<td>".$row['userId']."</td>";
-                        echo "<td>".$row['aid']."</td>";
+                        echo "<td>".$row['sid']."</td>";
+                        echo "<td>".$row['staffUserName']."</td>";
+                        echo "<td>".$row['name']."</td>";
+                        echo "<td>".$row['position']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 

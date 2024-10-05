@@ -5,7 +5,7 @@
 
 <?php 
     //checking if a user is logged in
-    if(!isset($_SESSION['admin_id'])){
+    if(!isset($_SESSION['adminid'])){
         header('Location: admin-login.php');
     } 
 ?>
@@ -23,8 +23,8 @@
 	<div class="main-container">
 		<div class="head">
 			<br>
-			<h1>Shield Plus Insurance</h1>
-			<h5>Best health insurance partner</h5> <br>
+			<h1 style="font-size:3vw">Apartment INC</h1>
+			<h5 style="font-size:20px">Find Your Dream Apartment with Ease</h5> <br>
 		</div>
 
 		<ul class="nav1">
@@ -41,8 +41,8 @@
 		<div class="admin-details details">
             <h4 class="title">Admin details</h4>
 			<div class="user-details-content">
-				<p>Admin ID : <b> <?php echo $_SESSION['admin_id'];?></b></p>
-				<p>Name : <b> <?php echo $_SESSION['admin_first_name']." ".$_SESSION['admin_last_name'];?></b></p> 
+				<p>Admin ID : <b> <?php echo $_SESSION['adminid'];?></b></p>
+				<p>Name : <b> <?php echo $_SESSION['adminName'];?></b></p> 
 				<!--<button class="button-green">Edit your details</button>-->
 			</div>
 			
@@ -50,13 +50,13 @@
 
 		<!-- Employee crud -->
 		<div class="manage-employee details">
-            <h4 class="title">Manage employees</h4>
+            <h4 class="title">Manage Staff</h4>
 			<hr>
             <div class="employee-buttons">
-            <a href="employee/read-emp.php" target="_blank" class="button-one">Read employees</a>
-            <a href="employee/add-emp.php" target="_blank" class="button-one">Add new employee</a>
-            <a href="employee/update-emp.php" target="_blank" class="button-one">Update employee details</a>
-            <a href="employee/delete-emp.php" target="_blank" class="button-one">Delete employee</a>
+			<a href="employee/add-emp.php" class="button-one">Add new staff</a>
+            <a href="employee/read-emp.php" class="button-one">Read employees</a>
+            <a href="employee/update-emp.php" class="button-one">Update employee details</a>
+            <a href="employee/delete-emp.php" class="button-one">Delete employee</a>
             </div>
 		</div>	
 

@@ -43,6 +43,13 @@ create table booking(
     foreign key (userId) references user(userId)
 );
 
+create table admin(
+    adminId int AUTO_INCREMENT primary key,
+    name varchar(45),
+    password varchar(45)
+);
+
+
 
 INSERT INTO user (userName, name, password, email) 
 VALUES 
@@ -86,3 +93,12 @@ VALUES
 (3, 3),
 (4, 4),
 (5, 5);
+
+INSERT INTO admin (name, password) 
+VALUES 
+('Sunil Wijesinghe', 'adminPass123'),
+('Nimal Fernando', 'nimAdmin456'),
+('Chandana Jayawardena', 'chandAdmin789'),
+('Dilani Perera', 'dilAdmin2021'),
+('Kumari Herath', 'kumariAdmin567');
+

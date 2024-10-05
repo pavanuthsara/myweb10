@@ -56,9 +56,9 @@
             <h4 class="title">Buy/Book apartment - for Buyers</h4>
 			<hr>
             <div class="employee-buttons">
-			<a href="book-ap/create.php" target="_blank" class="button-one">Add Booking</a>
-            <a href="book-ap/read.php" target="_blank" class="button-one">Read & Update Previous bookings</a>
-            <a href="book-ap/delete.php" target="_blank" class="button-one">Delete booking </a>
+			<a href="book-ap/create.php" class="button-one">Add Booking</a>
+            <a href="book-ap/read.php" class="button-one">Read & Update Previous bookings</a>
+            <a href="book-ap/delete.php" class="button-one">Delete booking </a>
         	</div>
 		</div>
 

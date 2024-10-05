@@ -4,7 +4,7 @@ session_start();
 require_once '../inc/connection.php';
 
 //checking if a user is logged in
-if(!isset($_SESSION['admin_id'])){
+if(!isset($_SESSION['adminid'])){
     header('Location: ../admin-login.php');
 } 
 
