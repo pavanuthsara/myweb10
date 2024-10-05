@@ -4,24 +4,20 @@ session_start();
 require_once '../inc/connection.php';
 
 //checking if a user is logged in
-if(!isset($_SESSION['admin_id'])){
+if(!isset($_SESSION['adminid'])){
     header('Location: ../admin-login.php');
 } 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     
-    $employeeId = $_POST['empId'];
-    $employeeName = $_POST['empName'];
-    $dob = $_POST['dob'];
-    $contact = $_POST['contact'];
-    $jobTitle = $_POST['job-title'];
+    $sid = $_POST['sid'];
 
-    $delete_sql = "DELETE FROM employee WHERE employeeId='$employeeId'";
+    $delete_sql = "DELETE FROM staff WHERE sid='$sid'";
 
     
     if($connection->query($delete_sql)){
-        header("Location: delete-emp.php?add-employee-message=Employee deleted successfully!");
+        header("Location: delete-emp.php?add-employee-message=Staff member deleted successfully!");
     } else{
         header("Location: delete-emp.php?add-employee-message=Error in query execution!");
     }   
@@ -42,9 +38,10 @@ $connection->close();
 
 <body>
 	<div class="main-container">
-            <div class="head"><br>
-                <h1>Shield Plus Insurance</h1>
-                <h5>Best health insurance partner</h5> <br>
+            <div class="head">
+                <br>
+                <h1 style="font-size:3vw">Apartment INC</h1>
+                <h5 style="font-size:20px">Find Your Dream Apartment with Ease</h5> <br>
             </div>
 
             <ul class="nav1">
@@ -55,10 +52,10 @@ $connection->close();
             
             <div class="form-container">
                 <form action="delete-emp.php" method="post" id="emp-form">
-                    <h3><u>Delete an employee</u></h3>
+                    <h3><u>Delete staff member</u></h3>
                 <div class="emp-details">
-                    <label for="">Employee ID</label>
-                    <input type="text" name="empId">
+                    <label for="">Staff member ID</label>
+                    <input type="text" name="sid">
                 </div>
             
                 <button type="submit" name="submit">Submit</button>

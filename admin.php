@@ -54,30 +54,23 @@
 			<hr>
             <div class="employee-buttons">
 			<a href="employee/add-emp.php" class="button-one">Add new staff</a>
-            <a href="employee/read-emp.php" class="button-one">Read employees</a>
-            <a href="employee/update-emp.php" class="button-one">Update employee details</a>
-            <a href="employee/delete-emp.php" class="button-one">Delete employee</a>
+            <a href="employee/update-emp.php" class="button-one">Reand & Update staff details</a>
+            <a href="employee/delete-emp.php" class="button-one">Delete staff members</a>
             </div>
 		</div>	
 
         <div class="manage-employee details">
-            <h4 class="title">Manage plans</h4>
+            <h4 class="title">Manage Users</h4>
 			<hr>
             <div class="employee-buttons">
-            <a href="plan/read-plan.php" target="_blank" class="button-one">Read plan details</a>
-            <a href="plan/add-plan.php" target="_blank" class="button-one">Add new plan</a>
-            <a href="plan/update-plan.php" target="_blank" class="button-one">Update plan detail</a>
-            <a href="plan/delete-plan.php" target="_blank" class="button-one">Delete plan</a>
+			<a href="plan/add-plan.php" class="button-one">Add new user</a>
+            <a href="plan/read-plan.php" class="button-one">Read plan details</a>
+            <a href="plan/update-plan.php" class="button-one">Update plan detail</a>
+            <a href="plan/delete-plan.php" class="button-one">Delete plan</a>
             </div>
 		</div>	
 
-        <div class="manage-complaints details">
-			<h4 class="title">Manage Annual Fee Payments</h4>
-            <div class="employee-buttons">
-            <a href="annualFee/admin-read-af.php" target="_blank" class="button-one">User Annual Fee Payments</a>
-            </div>
-			<hr>
-		</div>
+       
 
 
         <?php require_once('inc/footer.php') ?>
