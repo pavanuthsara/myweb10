@@ -36,6 +36,7 @@ li a:hover:not(.active) {
 body {
     background: url('image.jpg');
 }
+
 .cloumn {
     position: absolute;
     padding-right: 3%;
@@ -85,5 +86,5 @@ footer, footer small{
 }
 
 .head{
-	background-color: #AAD9BB;
+	background-color: #6A9AB0;
 }

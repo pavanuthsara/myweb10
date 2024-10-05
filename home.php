@@ -37,16 +37,16 @@
                 <p>+94 11 0000000</p>
                 
                 <p>Fax : (+94) 11 0000000</p>
-                <p>Email : lk.info@shieldplusinsurance.com</p>
+                <p>Email : lk.info@apartmentINC.com</p>
             </div>
             <div class="text">
                 <h2>GO</h2>
-                <p>SHIELDPLUSINSURANCE.COM</p>
-                <p>Visit our corporate site to learn more about <br>shieldplusinsurance.</p>
+                <p>apartmentINC.COM</p>
+                <p>Your Trusted Partner in Finding the Perfect Apartment <br>Apartment INC</p>
             </div>
             <div class="text">
                 <h2>Head Office</h2>
-                <p>Shield Plus Insurance,<br>
+                <p>Apartment INC<br>
                     251, Malabe<br>
                     Colombo<br>
                     Sri Lanka.</p>
@@ -62,11 +62,11 @@
         </div>
 		
 
-	<footer>
-		<hr>
-		&copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
-		<small>email@shieldplus.com</small>
-	</footer>
+        <footer>
+            <hr>
+            &copy; 2024 Copyright Reserved<br>
+            <small>email@ApartmentINC.com</small>
+        </footer>
 
 	</div>
 
