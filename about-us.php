@@ -12,6 +12,59 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* About Container */
+.about-container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #333;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Hidden Content */
+.hidden {
+    display: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #3A6D8C;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6A9AB0 ;
+}
+
     </style>
 </head>
 
@@ -25,6 +78,26 @@
         <div class="section">
         <!--<img src="health_image.jpg" width="100%" height="400px">-->
         <h1 id = "overview ">Overview</h1>
+
+        <div class="about-container">
+        <h1>About Us</h1>
+        <p id="about-intro">
+            Welcome to the Online Apartment Sales System, your trusted platform for finding and purchasing the perfect apartment. 
+            Whether you're a first-time buyer or a seasoned investor, we provide a user-friendly experience to connect you with the best real estate options.
+        </p>
+
+        <p id="more-info" class="hidden">
+            Our mission is to revolutionize the way you buy apartments by offering transparency, ease, and expert advice throughout the process.
+            With a growing database of properties and a dedicated support team, we ensure that every buyer has a smooth and efficient experience. 
+            Founded in 2020, we’ve already helped thousands of customers find their dream homes. We continue to grow, offering new features and enhancing customer satisfaction.
+        </p>
+
+        <button id="readMoreBtn">Read More</button>
+    </div>
+
+    
+
+
         <p class = "header"><B>Headline:</p></B></p>
         <P>Your Trusted Partner in Finding the Perfect Apartment</p>
             <ol>
@@ -52,5 +125,6 @@
             <small>email@ApartmentINC.com</small>
     </footer>
 
+    <script src="./javascript/about.js"></script>
 </body>
 </html>

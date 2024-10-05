@@ -72,7 +72,7 @@ li a:hover:not(.active) {
 	align-items: center; 
 	min-height: 100vh;
 	font-size: 16px;
-	background-image: url('../img/family.webp');
+	background-image: url('../img/family.jpg');
 	background-repeat: no-repeat;
 	background-size: cover; 
 }
