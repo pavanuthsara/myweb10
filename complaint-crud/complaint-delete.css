@@ -3,7 +3,6 @@
 .main-container{
 	font-family: 'poppins';
 	border: 1px solid black;
-	margin: 0px 100px 10px 100px;
 	background-color: #EEEEEE;
 }
 
@@ -52,7 +51,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #6A9AB0;
 }
 
 .h3{
@@ -99,7 +98,7 @@ input, select{
 }
 
 button{
-    background-color: #4CAF50;
+    background-color: #6A9AB0;
     color: white;
     margin: 0px auto;
     padding: 10px;

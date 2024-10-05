@@ -19,7 +19,7 @@
 }
 
 .head{
-	background-color: #AAD9BB;
+	background-color: #6A9AB0;
 }
 
 ul{
@@ -75,7 +75,7 @@ li a:hover {
 	align-items: center;
 	min-height: 100vh;
 	font-size: 16px;
-    background-image: url('../img/family.webp');
+    background-image: url('../img/family.jpg');
     background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -107,7 +107,7 @@ label {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #9ADE7B;
+    background-color: #6A9AB0;
     color: black;
     border: none;
     border-radius: 5px;
@@ -115,7 +115,7 @@ button {
 }
 
 button:hover {
-    background-color: #7BB162;
+    background-color: rgb(119, 187, 214);
 }
 
 label.login-as-user{
