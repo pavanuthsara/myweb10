@@ -4,7 +4,7 @@ session_start();
 require_once '../inc/connection.php';
 
 //checking if a user is logged in
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['username'])){
     header("Location: sign-in.php");
 } 
 
@@ -13,11 +13,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     $complaintId = $_POST['complaintId'];
 
-    $delete_sql = "DELETE FROM complaint WHERE complaintId='$complaintId'";
+    $delete_sql = "DELETE FROM usercomplaint WHERE cid='$complaintId'";
 
 
     if($connection->query($delete_sql)){
-        header("Location: complaint-delete.php");
+        echo "<script>alert('Successfully deleted')</script>";
+        // header("Location: complaint-delete.php");
     } else{
         exit("error!");
     }   
@@ -39,9 +40,11 @@ $connection->close();
 
 <body>
 	<div class="main-container">
-            <div class="head"><br>
-                <h1>Shield Plus Insurance</h1>
-                <h5>Best health insurance partner</h5> <br>
+            
+            <div class="head">
+                <br>
+                <h1 style="font-size:3vw">Apartment INC</h1>
+                <h5 style="font-size:20px">Find Your Dream Apartment with Ease</h5> <br>
             </div>
 
             <ul class="nav1">

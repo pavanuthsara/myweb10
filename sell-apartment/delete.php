@@ -4,22 +4,22 @@ session_start();
 require_once '../inc/connection.php';
 
 //checking if a user is logged in
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['username'])){
     header("Location: sign-in.php");
 } 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     
-    $claimId = $_POST['claimId'];
+    $aid = $_POST['aid'];
 
-    $delete_sql = "DELETE FROM claimRequest WHERE claimId='$claimId'";
+    $delete_sql = "DELETE FROM apartment WHERE aid='$aid'";
 
 
     if($connection->query($delete_sql)){
-        header("Location: delete-claim.php?add-employee-message=Payment record deleted successfully!");
+        header("Location: delete.php?add-employee-message=Apartment deleted successfully!");
     } else{
-        header("Location: delete-claim.php?add-employee-message=Error in query execution!");
+        header("Location: delete.php?add-employee-message=Error in query execution!");
     }   
 
 }
@@ -51,11 +51,11 @@ $connection->close();
             
             
             <div class="form-container">
-                <form action="delete-claim.php" method="post" id="emp-form">
-                    <h3><u>Delete a claim request</u></h3>
+                <form action="delete.php" method="post" id="emp-form">
+                    <h3><u>Delete your apartment</u></h3>
                 <div class="emp-details">
-                    <label for="">Enter claim ID</label>
-                    <input type="text" name="claimId">
+                    <label for="">Enter apartment ID</label>
+                    <input type="text" name="aid">
                 </div>
             
                 <button type="submit" name="submit">Submit</button>

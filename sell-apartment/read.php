@@ -1,7 +1,6 @@
 <?php 
 session_start(); 
 $username = $_SESSION['username'];
-$userid = $_SESSION['userid']
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,12 +8,11 @@ $userid = $_SESSION['userid']
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>User - claim requests details</title>
-	<link rel="stylesheet" type="text/css" href="complaint-add.css">
+	<link rel="stylesheet" type="text/css" href="style-claim.css">
 </head>
 
 <body>
 	<div class="main-container">
-        
         <div class="head">
             <br>
             <h1 style="font-size:3vw">Apartment INC</h1>
@@ -27,12 +25,12 @@ $userid = $_SESSION['userid']
         </ul>
 
         <div class="view-employee"> 
-            <div><b>Your complaints</b></div> <br>
+            <div><b>Your claim requests</b></div> <br>
                 <?php 
                 require_once '../inc/connection.php';
-                $sql = "SELECT * FROM usercomplaint WHERE userId = '$userid'";
+                $userid = $_SESSION['userid'];
+                $sql = "SELECT * FROM apartment WHERE userId = '$userid'";
                 $result = $connection->query($sql);
-
                 
                 if(!$result){
                     die("Invalid query or no results found!");
@@ -72,19 +70,20 @@ $userid = $_SESSION['userid']
                     }
                     </style>";
                     echo '<div class="center-table">';
-                    
                     echo "<table>";
-                    echo "<tr><th>Complaint ID</th> <th>User Id</th> <th>Complaint</th> </tr>";
+                    echo "<tr><td>Apartment Id</td> <td>Name</td> <td>Address</td> <td>Available Homes</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
-                        echo "<td>".$row['cid']."</td>";
-                        echo "<td>".$row['userId']."</td>";
-                        echo "<td>".$row['complaint']."</td>";
+                        echo "<td>".$row['aid']."</td>";
+                        echo "<td>".$row['name']."</td>";
+                        echo "<td>".$row['address']."</td>";
+                        echo "<td>".$row['availableHomes']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 
                     echo '</div>';
                 } 
+                //$connection->close();
                 ?>
                 <hr>
             </div>
@@ -102,17 +101,17 @@ $userid = $_SESSION['userid']
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     
-                    $complaintId = $_POST['complaintId'];
-                    $userId = $_SESSION['userid'];
-                    $complaint = $_POST['complaint'];
+                    $aid = $_POST['aid'];
+                    $aname = $_POST['name'];
+                    $address = $_POST['address'];
+                    $homes = $_POST['homes'];
 
-                    $update_sql = "UPDATE usercomplaint SET  complaint='$complaint'
-                    WHERE cid='$complaintId' and userId='$userId'";
+                    $update_sql = "UPDATE apartment SET  name='$aname', address='$address', availableHomes='$homes'
+                    WHERE aid='$aid'";
 
                     if($connection->query($update_sql)){
-                        //header("Location: read-af.php?add-employee-message=Employee entered successfully!");
-                        echo "successfully updated!";
-                        header("Location: complaint-read.php");
+                        header("Location: read.php");
+                        // echo "<script>alert('successfully updated!')</script>";
                     } else{
                         exit("error!");
                     }
@@ -123,33 +122,48 @@ $userid = $_SESSION['userid']
             ?>
 
             <div class="form-container">
-            <form action="complaint-read.php" method="post" id="emp-form">
-                    <h3><u>Update a complaint - form</u></h3>
+                <form action="read.php" method="post" id="emp-form" enctype="multipart/form-data">
+                    <h3><u>Update apartment details - form</u></h3>
+                    <!--<p><small>[Add payment details according to your payment slip]</small></p>-->
 
-                    <div class="emp-details">
-                        <label for="">Complaint ID</label> 
-                        <input type="text" name="complaintId">
-                    </div>
+                <div class="emp-details">
+                    <label for="">Apartment ID</label> <br>
+                    <input type="text" name="aid">
+                </div>
 
-                    <div class="emp-details">
-                        <label for="">Complaint</label> 
-                        <input type="text" name="complaint">
-                    </div>
 
-                    <div class="emp_details">
-                        <p>This data is submitted according to;</p> 
-                        Username: <b><?php echo $_SESSION['username']."  " ?></b> <br>
-                    </div> <br>
-                    <button type="submit" name="submit" >Update complaint</button>
+                <div class="emp-details">
+                    <label for="">Apartment name</label> <br>
+                    <input type="text" name="name">
+                </div>
 
-                    <br>
-                    <p>
-                        <?php
-                        if(isset($_GET['add-employee-message'])){
-                            echo $_GET['add-employee-message'];
-                        }
-                        ?>
-                    </p>
+                <div class="emp-details">
+                    <label for="">Apartment address</label> <br>
+                    <input type="text" name="address">
+                </div>
+
+                <div class="emp-details">
+                    <label for="">Available no of homes</label> <br>
+                    <input type="text" name="homes">
+                </div>
+
+                <div class="emp_details">
+                    <p>This data is submitted according to</p> 
+                    User ID : <b><?php echo $_SESSION['userid']."  "; ?></b> <br>
+                    User Name : <b><?php echo "  ".$_SESSION['username']; ?></b>
+                </div> <br>
+
+                <input type="hidden" name="date" value="<?php echo date('Y-m-d'); ?>">
+
+                <button type="submit" name="submit">Submit claim request</button>
+                <br>
+                <p>
+                    <?php
+                    if(isset($_GET['add-employee-message'])){
+                        echo $_GET['add-employee-message'];
+                    }
+                    ?>
+                </p>
                 </form>
 
             </div>
@@ -160,9 +174,5 @@ $userid = $_SESSION['userid']
                 &copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
                 <small>email@shieldplus.com</small>
             </footer>
-
-        
 </body>
 </html>
-
-<?php $connection->close(); ?>

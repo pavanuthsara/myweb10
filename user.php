@@ -20,11 +20,12 @@
 
 <body>
 	<div class="main-container">
-		<div class="head">
-			<br>
-			<h1>Shield Plus Insurance</h1>
-			<h5>Best health insurance partner</h5> <br>
-		</div>
+		
+			<div class="head">
+				<br>
+				<h1 style="font-size:3vw">Apartment INC</h1>
+				<h5 style="font-size:20px">Find Your Dream Apartment with Ease</h5> <br>
+			</div>
 
 		<ul class="nav1">
 			<li class="nav1"><a href="home.php">Home</a></li>
@@ -46,14 +47,13 @@
 			<div class="user-details-content">
 				<p>Username : <?php echo $_SESSION['username'];?></p>
 				<p>Name : <?php echo $_SESSION['name'];?></p> 
-				<!-- <p>Plan : <?php echo $_SESSION['plan_name']; ?></p> -->
 			</div>
 			
 		</div>
 
 	
 		<div class="manage-employee details">
-            <h4 class="title">Buy/Book apartment</h4>
+            <h4 class="title">Buy/Book apartment - for Buyers</h4>
 			<hr>
             <div class="employee-buttons">
 			<a href="booking/add-af.php" target="_blank" class="button-one">Add Booking</a>
@@ -63,22 +63,22 @@
 		</div>
 
 		<div class="manage-employee details">
-            <h4 class="title">Add a complaint</h4>
+            <h4 class="title">Add a complaint - [for Sellers and Buyers]</h4>
 			<hr>
             <div class="employee-buttons">
-			<a href="complaint-crud/complaint-add.php" target="_blank" class="button-one">Add a complaint</a>
-            <a href="complaint-crud/complaint-read.php" target="_blank" class="button-one">Read & Update Previous previous complaint</a>
-            <a href="complaint-crud/complaint-delete.php" target="_blank" class="button-one">Delete complaint</a>
+			<a href="complaint-crud/complaint-add.php"  class="button-one">Add a complaint</a>
+            <a href="complaint-crud/complaint-read.php"  class="button-one">Read & Update Previous previous complaint</a>
+            <a href="complaint-crud/complaint-delete.php"  class="button-one">Delete complaint</a>
         	</div>
 		</div>
 
 		<div class="manage-employee details">
-            <h4 class="title">Sell your apartment - for sellers</h4>
+            <h4 class="title">Sell your apartment - for Sellers</h4>
 			<hr>
             <div class="employee-buttons">
-			<a href="claim-request/create-claim.php" target="_blank" class="button-one">Add claim request</a>
-            <a href="claim-request/read-claim.php" target="_blank" class="button-one">Read & Update Previous claim requests</a>
-            <a href="claim-request/delete-claim.php" target="_blank" class="button-one">Delete claim request</a>
+			<a href="sell-apartment/create.php" class="button-one">Add apartment details</a>
+            <a href="sell-apartment/read.php" class="button-one">Read & Update apartment details</a>
+            <a href="sell-apartment/delete.php" class="button-one">Delete your apartments</a>
         	</div>
 		</div>
 		
