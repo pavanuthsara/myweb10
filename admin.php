@@ -63,9 +63,9 @@
             <h4 class="title">Manage Users</h4>
 			<hr>
             <div class="employee-buttons">
-			<a href="plan/add-plan.php" class="button-one">Add new user</a>
-            <a href="plan/read-plan.php" class="button-one">Read & Update user details</a>
-            <a href="plan/delete-plan.php" class="button-one">Delete user</a>
+			<a href="users/add.php" class="button-one">Add new user</a>
+            <a href="users/read.php" class="button-one">Read & Update user details</a>
+            <a href="users/delete.php" class="button-one">Delete user</a>
             </div>
 		</div>	
 

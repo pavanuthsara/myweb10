@@ -1,5 +1,29 @@
 <?php 
+require_once '../inc/connection.php';
 session_start(); 
+
+if(!isset($_SESSION['adminid'])){
+    header("Location: sign-in.php");
+} 
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    
+    $uid = $_POST['uid'];
+    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+
+    $update_sql = "UPDATE user SET userName='$username', name='$name', email='$email' 
+                    WHERE userId='$uid'";
+   
+
+    if($connection->query($update_sql)){
+        header("Location: read.php?add-employee-message=User updated successfully!");
+    } else{
+        header("Location: read.php?add-employee-message=Error");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,9 +36,10 @@ session_start();
 
 <body>
 	<div class="main-container">
-        <div class="head"><br>
-	    <h1>Shield Plus Insurance</h1>
-	    <h5>Best health insurance partner</h5> <br>
+        <div class="head">
+            <br>
+            <h1 style="font-size:3vw">Apartment INC</h1>
+            <h5 style="font-size:20px">Find Your Dream Apartment with Ease</h5> <br>
         </div>
 
         <ul class="nav1">
@@ -23,10 +48,10 @@ session_start();
         </ul>
 
         <div class="view-employee"> 
-            <div><b>Plan Details</b></div> <br>
+            <div><b>Users Details</b></div> <br>
                 <?php 
-                require_once '../inc/connection.php';
-                $sql = "SELECT * FROM plan ORDER BY planId ASC";
+                // require_once '../inc/connection.php';
+                $sql = "SELECT * FROM user ORDER BY userId ASC";
                 $result = $connection->query($sql);
                 
                 if(!$result){
@@ -71,14 +96,13 @@ session_start();
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
-                    echo "<tr><td>Plan Id</td> <td>Plan Name</td> <td>Plan Fee</td> <td>Plan Description</td> <td>Duration</td></tr>";
+                    echo "<tr><th>User Id</th> <th>Userame</th> <th>Name</th> <th>Email</th> </tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
-                        echo "<td>".$row['planId']."</td>";
-                        echo "<td>".$row['planName']."</td>";
-                        echo "<td>".$row['planFee']."</td>";
-                        echo "<td>".$row['planDescription']."</td>";
-                        echo "<td>".$row['duration']."</td>";
+                        echo "<td>".$row['userId']."</td>";
+                        echo "<td>".$row['userName']."</td>";
+                        echo "<td>".$row['name']."</td>";
+                        echo "<td>".$row['email']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 
@@ -87,6 +111,43 @@ session_start();
                 $connection->close();
                 ?>
                 
+            </div>
+
+            <div class="form-container">
+                <form action="read.php" method="post" id="emp-form">
+                    <h3><u>Update user  details</u></h3>
+                <div class="emp-details">
+                    <label for="">User ID</label>
+                    <input type="text" name="uid">
+                </div>
+
+                <div class="emp-details">
+                    <label for="">Usename</label>
+                    <input type="text" name="username">
+                </div>
+
+                <div class="emp-details">
+                    <label for="">Name</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="emp-details">
+                    <label for="">Email</label>
+                    <input type="text" name="email">
+                </div>
+                
+
+                <button type="submit" name="submit">Update</button>
+                <br>
+                <p>
+                    <?php
+                    if(isset($_GET['add-employee-message'])){
+                        echo $_GET['add-employee-message'];
+                    }
+                    ?>
+                </p>
+                </form>
+
             </div>
 
         <footer>
