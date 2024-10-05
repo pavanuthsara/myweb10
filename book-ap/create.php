@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $add_sql = "INSERT INTO booking VALUES (0, '$userid', '$aid')";
 
     if($connection->query($add_sql)){
-        echo "<script>alert('complaint added successfully')</script>";
+        echo "<script>alert('Booking added successfully')</script>";
     } else {
         exit ("error!");
     }
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>User - Add payment</title>
-	<link rel="stylesheet" type="text/css" href="style-claim.css">
+	<link rel="stylesheet" type="text/css" href="create.css">
 </head>
 
 <body>
@@ -135,7 +135,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     echo "</table>"; 
                     echo '</div>';
                 } 
-                //$connection->close();
+                $connection->close();
                 ?>
         <footer>
             <hr>

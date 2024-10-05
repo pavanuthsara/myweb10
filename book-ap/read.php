@@ -29,7 +29,7 @@ $username = $_SESSION['username'];
                 <?php 
                 require_once '../inc/connection.php';
                 $userid = $_SESSION['userid'];
-                $sql = "SELECT * FROM apartment WHERE userId = '$userid'";
+                $sql = "SELECT * FROM booking WHERE userId = '$userid'";
                 $result = $connection->query($sql);
                 
                 if(!$result){
@@ -71,13 +71,12 @@ $username = $_SESSION['username'];
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
-                    echo "<tr><td>Apartment Id</td> <td>Name</td> <td>Address</td> <td>Available Homes</td></tr>";
+                    echo "<tr><td>Booking Id</td> <td>User Id</td> <td>Apartment Id</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
+                        echo "<td>".$row['bookingId']."</td>";
+                        echo "<td>".$row['userId']."</td>";
                         echo "<td>".$row['aid']."</td>";
-                        echo "<td>".$row['name']."</td>";
-                        echo "<td>".$row['address']."</td>";
-                        echo "<td>".$row['availableHomes']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 
@@ -123,28 +122,17 @@ $username = $_SESSION['username'];
 
             <div class="form-container">
                 <form action="read.php" method="post" id="emp-form" enctype="multipart/form-data">
-                    <h3><u>Update apartment details - form</u></h3>
+                    <h3><u>Update booking details - form</u></h3>
                     <!--<p><small>[Add payment details according to your payment slip]</small></p>-->
+
+                <div class="emp-details">
+                    <label for="">Booking ID</label> <br>
+                    <input type="text" name="bid">
+                </div>
 
                 <div class="emp-details">
                     <label for="">Apartment ID</label> <br>
                     <input type="text" name="aid">
-                </div>
-
-
-                <div class="emp-details">
-                    <label for="">Apartment name</label> <br>
-                    <input type="text" name="name">
-                </div>
-
-                <div class="emp-details">
-                    <label for="">Apartment address</label> <br>
-                    <input type="text" name="address">
-                </div>
-
-                <div class="emp-details">
-                    <label for="">Available no of homes</label> <br>
-                    <input type="text" name="homes">
                 </div>
 
                 <div class="emp_details">

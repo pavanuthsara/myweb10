@@ -3,7 +3,6 @@
 .main-container{
 	font-family: 'poppins';
 	border: 1px solid black;
-	margin: 0px 100px 10px 100px;
 	background-color: #EEEEEE;
 }
 
@@ -68,8 +67,7 @@ footer, footer small{
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    /*height: 100vh;*/
+    height: 55vh;
 }
 
 #emp-form{
@@ -110,34 +108,4 @@ button{
     width: 80%;
     display: flex;
     justify-content: center;
-}
-
-.green-button{
-	display: inline-block;
-	background-color: #a1f1a4;
-	color: black;
-	padding: 10px 20px;
-	text-align: center;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.green-button:hover {
-	background-color: #54bc5b;
-}
-
-.red-button{
-	display: inline-block;
-	background-color: #ee6868;
-	color: black;
-	padding: 10px 20px;
-	text-align: center;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.red-button:hover {
-	background-color: #f14f4f;
 }
